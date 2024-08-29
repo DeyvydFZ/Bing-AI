@@ -4,21 +4,20 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     const question = document.getElementById("question").value;
     const responseDiv = document.getElementById("response");
 
-    // Exemplo de URL da API
-    const apiUrl = "https://api.example.com/ask"; // Substitua pela URL da sua API
+    // URL da API com a pergunta e a chave da API
+    const apiUrl = `https://jeff-apis.shop/api/ia/gbard?query=${encodeURIComponent(question)}&apikey=Devs`;
 
     fetch(apiUrl, {
-        method: "POST",
+        method: "GET",
         headers: {
             "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ question: question })
+        }
     })
     .then(response => response.json())
     .then(data => {
         // Exibe a resposta da API
         responseDiv.style.display = "block";
-        responseDiv.innerHTML = "Resposta: " + data.answer;
+        responseDiv.innerHTML = "Resposta: " + data.resultado;
     })
     .catch(error => {
         // Exibe uma mensagem de erro
