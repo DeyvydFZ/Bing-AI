@@ -5,7 +5,7 @@ document.getElementById("questionForm").addEventListener("submit", function(even
     const responseDiv = document.getElementById("response");
 
     // URL da API com a pergunta e a chave da API
-    const apiUrl = `https://jeff-apis.shop/api/ia/gbard?query=${encodeURIComponent(question)}&apikey=Devs`;
+    const apiUrl = `https://jeff-apis.shop/outros/chat/gemini?query=${encodeURIComponent(question)}&apikey=guds`;
 
     fetch(apiUrl, {
         method: "GET",
